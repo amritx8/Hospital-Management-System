@@ -1,0 +1,54 @@
+<%- include('partials/header'); -%>
+
+  <div class="container">
+    <div class="panel-body">
+      <center>
+        <h2> Appointment </h2>
+      </center>
+      <a style="float: left;" href="/receptionist/<%=AccessID%>" class="btn btn-primary">Back</a>
+      <a style="float: right;" href="../../manageAppointment/<%=AccessID%>/add" class="btn btn-primary">Book Appointment</a>
+    </div>
+    <div class="panel-body">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Appointment ID</th>
+            <th scope="col">Patient ID</th>
+            <th scope="col">Doctor ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Update/Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% data.forEach(function (data) { %>
+            <tr>
+              <td>
+                <%= data.ID %>
+              </td>
+              <td>
+                <%= data.patientID %>
+              </td>
+              <td>
+                <%= data.doctorID %>
+              </td>
+              <td>
+                <%= data.date %>
+              </td>
+              <td>
+                <%= data.time %>
+              </td>
+              <td>
+                <a href="../../manageAppointment/<%=AccessID%>/update/<%=data.ID%>"
+                  class="btn btn-success btn-sm">Update</a>
+                <a href="../../manageAppointment/<%=AccessID%>/delete/<%=data.ID%>"
+                  class="btn btn-warning btn-sm">Delete</a>
+              </td>
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <%- include('partials/footer'); -%>

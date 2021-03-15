@@ -1,0 +1,51 @@
+<%- include('partials/header'); -%>
+
+    <div class="container">
+        <br>
+        <div class="panel-body">
+            <center>
+                <h2> Receptionist </h2>
+            </center>
+            <a style="float: left;" href="/admin/<%= AccessID %>" class="btn btn-primary">Back</a>
+            <a style="float: right;" href="../../manageReceptionist/<%= AccessID %>/add" class="btn btn-primary">Add Receptionist</a>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped" style="margin-top: 10px">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Update/Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(function (data) { %>
+                        <tr>
+                            <td>
+                                <%= data.ID %>
+                            </td>
+                            <td>
+                                <%= data.name %>
+                            </td>
+                            <td>
+                                <%= data.email %>
+                            </td>
+                            <td>
+                                <%= data.phoneNumber %>
+                            </td>
+                            <td>
+                                <a href="../../manageReceptionist/<%= AccessID %>/update/<%=data.ID%>"
+                                    class="btn btn-warning btn-sm">Update</a>
+                                <a href="../../manageReceptionist/<%= AccessID %>/delete/<%=data.ID%>"
+                                    class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <%- include('partials/footer'); -%>

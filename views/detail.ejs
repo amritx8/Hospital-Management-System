@@ -1,0 +1,70 @@
+<%- include('partials/header'); -%>
+
+    <div class="container">
+        <a href="/admin/<%= AccessID %>" class="btn btn-primary">Back</a>
+        <center>
+            <h1>
+                <%= Type %> List
+            </h1>
+        </center>
+        <table class="table">
+            <% if(Type==='Appointment' ) { %>
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Appointment ID</th>
+                        <th scope="col">Patient ID</th>
+                        <th scope="col">Doctor ID</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(function(data) { %>
+                        <tr>
+                            <td>
+                                <%= data.ID %>
+                            </td>
+                            <td>
+                                <%= data.patientID %>
+                            </td>
+                            <td>
+                                <%= data.doctorID %>
+                            </td>
+                            <td>
+                                <%= data.date %>
+                            </td>
+                            <td>
+                                <%= data.time %>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            <% } else { %>
+                <thead class="thead-dark">
+
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(function(data) { %>
+                        <tr>
+                            <td>
+                                <%= data.name %>
+                            </td>
+                            <td>
+                                <%= data.phoneNumber %>
+                            </td>
+                            <td>
+                                <%= data.email %>
+                            </td>
+                        </tr>
+                     <% }) %>
+                </tbody>
+            <% } %>
+        </table>
+    </div>
+
+    <%- include('partials/footer'); -%>

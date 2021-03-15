@@ -1,0 +1,41 @@
+<%- include('partials/header'); -%>
+
+    <div class="container">
+
+        <a href = "/managePatient/<%=AccessID%>/view" class="btn btn-primary">Back</a>
+
+        <div class="panel-body" style="margin-top: 50px">
+
+            <h3>Patient Details</h3>
+
+            <form action="" method="POST">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="name">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>Phone Number</label>
+                        <input type="text" class="form-control" name="phoneNumber">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="email">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>Age</label>
+                        <input type="text" class="form-control" name="age">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" name="submit">ADD</button>
+            </form>
+        </div>
+    </div>
+
+<%- include('partials/footer'); -%>

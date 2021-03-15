@@ -1,0 +1,45 @@
+<%- include('partials/header'); -%>
+
+  <div class="container">
+
+    <a href="/manageAppointment/<%=AccessID%>/view" class="btn btn-primary">Back</a>
+
+    <div class="panel-body" style="margin-top: 50px">
+      <h3>Update Appointment</h3>
+      <form action="" method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label>Appointment ID</label>
+            <input type="number" class="form-control" name="ID" value="<%= data.ID %>" readonly>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label>Patient ID</label>
+            <input type="number" class="form-control" name="patientID" value="<%= data.patientID %>">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label>Doctor ID</label>
+            <input type="number" class="form-control" name="doctorID" value="<%= data.doctorID %>">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label>Date</label>
+            <input type="date" class="form-control" name="date" value="<%= data.date %>">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label>Time</label>
+            <input type="time" class="form-control" name="time" value="<%= data.time %>">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" name="submit">Book</button>
+      </form>
+    </div>
+  </div>
+
+  <%- include('partials/footer'); -%>

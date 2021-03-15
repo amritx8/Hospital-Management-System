@@ -1,0 +1,85 @@
+<%- include('partials/header'); -%>
+
+    <div class="container">
+
+        <center>
+            <h1>Welcome Doctor!</h1>
+        </center>
+    </div>
+    <div style="border: 3px solid #fff; padding: 20px;">
+
+        <div style="width: 50%; float: left; padding: 20px;">
+            <h2>Upcoming Appointments</h2>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Appointment ID</th>
+                        <th scope="col">Patient ID</th>
+                        <th scope="col">Doctor ID</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(function (data) { %>
+                        <tr>
+                            <td>
+                                <%= data.ID %>
+                            </td>
+                            <td>
+                                <%= data.patinetID %>
+                            </td>
+                            <td>
+                                <%= data.doctorID %>
+                            </td>
+                            <td>
+                                <%= data.date %>
+                            </td>
+                            <td>
+                                <%= data.time %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="width: 50%; float: left; padding: 20px;">
+            <h2>Past Appointments</h2>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Appointment ID</th>
+                        <th scope="col">Patient ID</th>
+                        <th scope="col">Doctor ID</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(function (data) { %>
+                        <tr>
+                            <td>
+                                <%= data.ID %>
+                            </td>
+                            <td>
+                                <%= data.patinetID %>
+                            </td>
+                            <td>
+                                <%= data.doctorID %>
+                            </td>
+                            <td>
+                                <%= data.date %>
+                            </td>
+                            <td>
+                                <%= data.time %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <%- include('partials/footer'); -%>

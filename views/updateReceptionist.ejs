@@ -1,0 +1,39 @@
+<%- include('partials/header.ejs'); -%>
+
+    <div class="container">
+        <br>
+        <a href="../../../manageReceptionist/<%= AccessID%>/view" class="btn btn-primary">Back</a>
+
+        <div class="pmanageDoctoranel-body" style="margin-top: 50px">
+            <h3>Receptionist Details</h3>
+            <form action="" method="POST">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>ID</label>
+                        <input type="text" class="form-control" name="ID" value="<%= data.ID %>" readonly>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="name" value="<%= data.name %>">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="email" value="<%= data.email %>">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>Phone Number</label>
+                        <input type="text" class="form-control" name="phoneNumber" value="<%= data.phoneNumber %>">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" name="submit">Update</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include('partials/footer'); -%>
